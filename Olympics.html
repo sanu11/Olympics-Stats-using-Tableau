@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Olympics History </title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+        // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
+        var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+        if ((is_chrome) && (is_safari)) {
+            is_safari = false;
+        }
+        if (is_safari) {
+            // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
+            if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
+                // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
+                document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
+                window.location.replace("_safari_fix.html");
+            }
+        }
+    </script>
+
+    <style>
+        body{
+font-family: "Comic sans MS",cursive,sans-serif;
+
+}
+
+.clear {
+    clear: both;
+}
+.spacer { margin:0; padding:0; height:50px; }
+
+.space {
+     margin-bottom: 2cm;
+  }
+</style>
+
+
+
+
+</head>
+
+<body style="background-color:#C0C0C0">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#Introduction">Olympics History</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Question1">Question 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Question2">Question 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Question3">Question 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Summary">Summary</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="row" style="padding-top:90px" id="Introduction">
+                <div style="font-size:20px;">
+                    <b>
+                        <u>
+                            <h2>Introduction</h2>
+                        </u>
+                    </b>
+                    <div style="padding-left:20px">
+                        <p>This dataset includes 120 years of Olympic history from Athens 1896 to Rio 2016.
+                            The data is in the form of two csv sheets. One has basic bio data of athletes and medals won by them in respective sports
+                            and the other has NOC regions. They are joined on NOC.
+                            This dataset can be used to visualize things like participants per country, medals won by different countries in summer and winter Olympics from 1896 to 2016.<br>
+                            <br>
+                            <a href="https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results">Link to Dataset</a></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Question 1 -->
+            <!-- <div class="space"></div> -->
+            <div class="space"></div>
+            <div class="row" id="Question1" style="padding-top:70px">
+                <u><b>
+                        <h2>Question 1</h2>
+                    </b></u>
+                <h4>Which country has maximum number of participants in Olympics from 1896 to 2016? And what is the split for male and female? </h4>
+
+                <br>
+                <br>
+
+                <h3 style="margin-top:50px">Stacked Bar Graph: Countrywise participants in Olympics from 1896 to 2016 </h3>
+                <div class="space"></div>
+                <div class='tableauPlaceholder' id='viz1536036031889' style='position: relative'><noscript><a href='#'><img alt='Question 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question1&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Olympics_188&#47;Question1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question1&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' /></object></div>
+            </div>
+
+            <div class="space"></div>
+            <p style="font-size:20px">Stacked graph given above represents number of participants (Y axis) per country (X axis).
+                The color gives us the split between male and female participants.
+                Since the graph is sorted in descending order of number of participants we can see that USA has maximum number of participants in Olympics
+                till now which is 18,853. (Male - 13,320, Female - 5,533).
+                Also This data can be filtered to get number of participants for specific years of Olympics.</p><br>
+
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1536036031889');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '827px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+
+
+            <!-- -------Question 2-------- -->
+            <div class="space"></div>
+            <div class="row" id="Question2" style="padding-top:70px">
+                <u><b>
+                        <h2>Question 2</h2>
+                    </b></u>
+                <h4> Which was the best year for USA in terms of total number of medals for summer and winter olympics respectively?
+                    How does the number of medals won in summer and winter olympics vary every year for any given country?</h4>
+
+                <br><br>
+                <h3 style="margin-top:50px">Line Chart: Total medals won by a country every year for winter and summer olympics separately from 1896 to 2016. </h3>
+                <br><br>
+                <div class='tableauPlaceholder' id='viz1535941491263' style='position: relative'><noscript><a href='#'><img alt='Question 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question2&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Olympics_188&#47;Question2' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question2&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' />
+                        <param name='toolbar' value='top' />
+                        <param name='showShareOptions' value='false' />
+                        <param name='subscriptions' value='no' />
+                        <param name='customViews' value='no' />
+
+                    </object></div>
+            </div>
+            <div class="space"></div>
+            <br><br><br>
+            <p style="font-size:20px">Above Line chart shows the total number of medals(Y axis) won by a country every year(X axis).
+                We can see that for summer olympics USA won 138 medals in the year 1984 and for winter olympics it won 29 medals in 2010
+                which is USA's highest till now. Thus 1984 was best the year for summer olympics and 2010 was the best year for winter olympics for USA.
+                Similarly by using region filter we can get total number of medals won in summer and winter olympics every year for that country.
+                Two charts are given separately for winter and summer olympics. They can be swapped by using season filter.</p><br>
+
+
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1535941491263');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                // var toolbar = divElement.getElementsByTagName('object')[2];
+                // toolbar.style.visibility="collapse"
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '827px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                // document.getElementById("toolbar-container").style.visibility = "collapse";
+            </script>
+
+
+            <!-- Question 3 -->
+            <div class="space"></div>
+            <div class="row" id="Question3" style="padding-top:70px">
+                <u><b>
+                    </b></u>
+                <u><h2>Question 3</h2></u>
+                <h4> Which country won maximum number of gold medals till now? Which is the best performing country for any given year?(in terms of gold medals)?
+                </h4>
+                <br><br>
+                <h3 style= "margin-top:50px" >Map: Total gold medals won by every country for given years.</h3>
+                <div class='tableauPlaceholder' id='viz1535997683088' style='position: relative'><noscript><a href='#'><img alt='Question 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question3&#47;1_rss.png'
+                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Olympics_188&#47;Question3' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='top' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;Olympics_188&#47;Question3&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' /></object></div>
+            </div>
+
+            <br>
+            <div class="space"></div>
+            <p style="font-size:20px">Map given above shows number of gold medals won by country in the form of color intensity.
+                Hovering over the region gives split of gold medals between summer and winter olympics.
+                It can be seen that USA has won the maximum number of gold medals which is 1131 (Summer - 1035, Winter - 96) till now on the basis of the highest saturation of the color there.
+                Also by using year as a filter we can see which country won maximum number of gold medals for that particular year.
+            </p><br>
+
+
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1535997683088');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '827px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+
+
+            <div class="row" style="padding-top:90px" id="Summary">
+                <div style="font-size:20px;">
+                    <b>
+                        <u>
+                            <h2>Summary</h2>
+                        </u>
+                    </b>
+                    <div style="padding-left:20px">
+                        <p> The graphs given above gave us some good insights into the olympics dataset.
+                            The questions above digs deeper into the dataset from giving information about total number of
+                            participants per country to number of medals won by a country and finally to total number of
+                            gold medals won by a country.<br>
+                            The dataset gives medals won by a participant and not team as a whole, thus I had to group data by team in order
+                            to get total number of medals won by a country. Also getting number of gold medals specifically involved conditional summation.
+                            Thus, in this way I have used Tableau for designing different charts to answer the questions given above.
+                            <br>
+                            <b>Some interesting facts about dataset:</b> We know that olympics are held every four years.
+                            I wondered why are there some years missing on 2nd graph (Line chart), some googling led me to the fact that
+                            Olympics were cancelled during those years due to World War 1 and 2.
+                            Example: 1916 Summer Olympics was cancelled due to World War 1 and 1940,1944 Winter Olympics were cancelled due to World War 2.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+
+
+</div>
+</div>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
